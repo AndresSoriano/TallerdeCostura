@@ -5,7 +5,6 @@ import time
 logging.basicConfig(level=logging.DEBUG,
                     format='(%(threadName)-2s) %(message)s')
 
-
 class Taller(object):
     def __init__(self, start=0):
         self.condicionMangasMAX = threading.Condition()
@@ -78,7 +77,7 @@ def crearManga(Taller):
 
 def crearCuerpo(Taller):
     while (taller.getMangas() >= 0):
-        # incrementarCuerpo (antes de decrementar
+        # incrementarCuerpo (antes de decrementar)
         # manga se debe validar que haya cupo en
         # la canasta de cuerpos)
         Taller.decrementarManga()
@@ -91,7 +90,6 @@ def ensamblaPrenda(Taller):
         Taller.incrementarPrenda()
         logging.debug('Ensamblando todo')
         time.sleep(3)
-
 
 taller = Taller()
 Lupita = threading.Thread(name='Lupita(mangas)', target=crearManga, args=(taller,))
